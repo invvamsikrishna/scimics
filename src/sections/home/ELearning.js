@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { Container, Typography, Box, Stack, Grid, Card } from "@mui/material";
-import { PAGE_PADDING, PUBLIC_URL } from "../../constants";
+import { Container, Typography, Box, Stack, Grid, Card, CardActionArea } from "@mui/material";
+import { MAXWIDTH, PUBLIC_URL } from "../../constants";
+
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const useStyles = makeStyles((theme) => ({
   elearningBlock1: {
@@ -31,22 +35,76 @@ const useStyles = makeStyles((theme) => ({
       borderLeft: "1px solid #55555560",
       borderBottom: "1px solid #55555560",
       borderTopLeftRadius: "12px",
+      borderBottomLeftRadius: "12px",
     },
+  },
+  cardInner: {
+    padding: "16px",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "start",
   },
 }));
 
 const ELearning = () => {
   const classes = useStyles();
+  const owlCarouselRef = useRef(null);
+  const [currentItem, setCurrentItem] = useState(0);
 
   const items = [
-    { name: "Projects", desc: "Every Project is an Opportunity to Build and Learn.", image: `${PUBLIC_URL}/static/icons/projects.svg` },
-    { name: "Roadmaps", desc: "AI tailored course plans for your focused learning experience", image: `${PUBLIC_URL}/static/icons/roadmap.svg` },
-    { name: "Coding Env", desc: "Learn coding seamlessly in our Cloud-Based Environment.", image: `${PUBLIC_URL}/static/icons/coding.svg` },
-    { name: "AI Assistant", desc: "Powerful AI that helps you overcome any coding challenge.", image: `${PUBLIC_URL}/static/icons/ai.svg` },
+    {
+      name: "Projects",
+      desc: "Every Project is an Opportunity to Build and Learn.",
+      icon: `${PUBLIC_URL}/static/icons/sm-projects.svg`,
+      activeIcon: `${PUBLIC_URL}/static/icons/sm-projects-cr.svg`,
+      image: `${PUBLIC_URL}/static/images/projects-main.svg`,
+    },
+    {
+      name: "Roadmaps",
+      desc: "AI tailored course plans for your focused learning experience",
+      icon: `${PUBLIC_URL}/static/icons/sm-roadmap.svg`,
+      activeIcon: `${PUBLIC_URL}/static/icons/sm-roadmap-cr.svg`,
+      image: `${PUBLIC_URL}/static/images/roadmap-main.svg`,
+    },
+    {
+      name: "Coding Env",
+      desc: "Learn coding seamlessly in our Cloud-Based Environment.",
+      icon: `${PUBLIC_URL}/static/icons/sm-coding.svg`,
+      activeIcon: `${PUBLIC_URL}/static/icons/sm-coding-cr.svg`,
+      image: `${PUBLIC_URL}/static/images/coding-main.svg`,
+    },
+    {
+      name: "AI Assistant",
+      desc: "Powerful AI that helps you overcome any coding challenge.",
+      icon: `${PUBLIC_URL}/static/icons/sm-ai.svg`,
+      activeIcon: `${PUBLIC_URL}/static/icons/sm-ai-cr.svg`,
+      image: `${PUBLIC_URL}/static/images/ai-main.svg`,
+    },
   ];
 
+  const options = {
+    items: 1,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    loop: true,
+    margin: 0,
+    dots: false,
+  };
+
+  const handleChange = (e) => {
+    if (e.item.index > 0) {
+      const index = e.item.index - 2;
+      setCurrentItem(index);
+    }
+  };
+
+  const handleClick = (index) => {
+    owlCarouselRef.current.to(index, 100);
+  };
+
   return (
-    <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING, my: 10 }}>
+    <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 6, mb: 10 }}>
       <Box sx={{ position: "relative" }}>
         <Box className={classes.elearningBlock1} />
 
@@ -64,7 +122,7 @@ const ELearning = () => {
           </Box>
 
           <Box>
-            <Typography variant="h3" gutterBottom>
+            <Typography variant="h2" fontWeight={700}>
               E-Learning
             </Typography>
             <Typography variant="body2" color="text.subtitle">
@@ -76,22 +134,26 @@ const ELearning = () => {
         <Box sx={{ height: 80 }} />
 
         <Box px={10}>
-          <Box py={3} px={10} sx={{ bgcolor: "background.default", border: "1px solid #55555550", borderRadius: 4, position: "relative", zIndex: 2 }}>
+          <Box pt={3} px={10} sx={{ bgcolor: "background.default", border: "1px solid #55555550", borderRadius: 4, position: "relative", zIndex: 2 }}>
             <Grid container spacing={2}>
               {items.map((item, index) => (
                 <Grid key={index} item xs={12} sm={6} md={3}>
-                  <Card sx={{ p: 3, boxShadow: 0 }}>
-                    <Stack direction="row" spacing={1} sx={{ mb: 3, alignItems: "center" }}>
-                      <Box component="img" src={item.image} sx={{ width: 20, height: 20, color: "#CED765" }} />
+                  <Card sx={{ boxShadow: 0, height: "100%" }}>
+                    <CardActionArea className={classes.cardInner} onClick={() => handleClick(index)}>
+                      <Stack direction="row" spacing={1} sx={{ mb: 2, alignItems: "center" }}>
+                        <Box component="img" src={currentItem == index ? item.activeIcon : item.icon} sx={{ width: 16, height: 16 }} />
 
-                      <Typography variant="h6" fontWeight="500" color="#CED765">
-                        {item.name}
+                        <Typography variant="h6" fontWeight="500" color={currentItem == index ? "#CED765" : "text.primary"}>
+                          {item.name}
+                        </Typography>
+                      </Stack>
+
+                      <Typography variant="subtitle2" fontSize={13} fontWeight="500">
+                        {item.desc}
                       </Typography>
-                    </Stack>
 
-                    <Typography variant="subtitle2" fontWeight="normal">
-                      {item.desc}
-                    </Typography>
+                      <Box flexGrow={1} />
+                    </CardActionArea>
                   </Card>
                 </Grid>
               ))}
@@ -99,7 +161,11 @@ const ELearning = () => {
 
             <Box p={2} />
 
-            <Box component="img" src={`${PUBLIC_URL}/static/images/elearning2.svg`} sx={{ width: "100%" }} />
+            <OwlCarousel className="owl-theme" startPosition={currentItem} ref={owlCarouselRef} {...options} onTranslated={handleChange}>
+              {items.map((item, index) => (
+                <Box key={index} component="img" src={item.image} sx={{ width: "100%" }} />
+              ))}
+            </OwlCarousel>
           </Box>
         </Box>
       </Box>

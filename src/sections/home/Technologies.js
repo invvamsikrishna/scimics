@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Container, Typography, Box, Stack, Grid } from "@mui/material";
-import { PAGE_PADDING, PUBLIC_URL } from "../../constants";
+import { Container, Typography, Box, Stack, Grid, Divider } from "@mui/material";
+import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 import CustomButton from "../../components/CustomButton";
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +53,7 @@ const Technologies = () => {
 
   return (
     <>
-      <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING, mt: 20 }}>
+      <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 12, mb: 12 }}>
         <Box sx={{ position: "relative" }}>
           <Box className={classes.technologyBlock1} />
           <Box className={classes.technologyBlock2} />
@@ -72,7 +72,7 @@ const Technologies = () => {
         <Box sx={{ height: 120 }} />
 
         <Box sx={{ textAlign: "center" }}>
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h2" fontWeight={700} gutterBottom>
             AI resume builder
           </Typography>
 
@@ -83,10 +83,14 @@ const Technologies = () => {
 
         <Box p={6} />
 
-        <Box component="img" src={`${PUBLIC_URL}/static/images/elearning2.svg`} sx={{ width: "100%" }} />
+        <Box component="img" src={`${PUBLIC_URL}/static/images/resume.svg`} sx={{ width: "100%" }} />
       </Container>
 
-      <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING, mt: 24 }}>
+      <Container maxWidth="md">
+        <Divider />
+      </Container>
+
+      <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 12 }}>
         <Box sx={{ position: "relative" }}>
           <Box className={classes.technologyBlock3} />
 
@@ -100,7 +104,7 @@ const Technologies = () => {
         <Box p={4} />
 
         <Box sx={{ textAlign: "center" }}>
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h2" fontWeight={700} gutterBottom>
             Mock Interview
           </Typography>
 
@@ -111,10 +115,10 @@ const Technologies = () => {
 
         <Box p={3} />
 
-        <Box component="img" src={`${PUBLIC_URL}/static/images/mock.svg`} sx={{ width: "100%" }} />
+        <Box component="img" src={`${PUBLIC_URL}/static/images/mock.png`} sx={{ width: "100%" }} />
       </Container>
 
-      <Container maxWidth="xs" disableGutters sx={{ mt: 20, mb: 20 }}>
+      <Container maxWidth="sm" disableGutters sx={{ mt: 20, mb: 20 }}>
         <Stack direction="row" justifyContent="center">
           <Box sx={{ height: 80, width: 80, backgroundImage: "linear-gradient(#5C67C7, #23329C)", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "6px" }}>
             <Box component="img" src={`${PUBLIC_URL}/static/icons/future.svg`} sx={{ width: 50, height: 50 }} />
@@ -124,7 +128,7 @@ const Technologies = () => {
         <Box p={2} />
 
         <Box sx={{ textAlign: "center" }}>
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h2" fontWeight={500} gutterBottom>
             Built for your future.
           </Typography>
 

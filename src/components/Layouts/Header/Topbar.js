@@ -5,7 +5,7 @@ import { Box, Toolbar, Hidden, IconButton, Fab, AppBar, Container, Zoom, Divider
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
-import { PAGE_PADDING, PUBLIC_URL } from "../../../constants";
+import { MAXWIDTH, PUBLIC_URL } from "../../../constants";
 
 const useStyles = makeStyles((theme) => ({
   logoImage: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     textAlign: "center",
-    fontSize: "16px",
+    fontSize: "14px",
     margin: "0px 16px",
     position: "relative",
     cursor: "pointer",
@@ -47,8 +47,8 @@ const Topbar = ({ items, handleSidebar, handleDialog }) => {
   return (
     <>
       <Box>
-        <AppBar elevation={trigger ? 1 : 0} position={trigger ? "fixed" : "static"} color="inherit" sx={{ transition: "top 0.5s ease", top: trigger ? 0 : -50 }}>
-          <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING }}>
+        <AppBar elevation={trigger ? 1 : 0} position={trigger ? "fixed" : "static"} color="inherit" sx={{ transition: "top 0.5s ease", top: trigger ? 0 : -50, p: 1.5 }}>
+          <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH }}>
             <Toolbar disableGutters sx={{ position: "relative", display: "flex", justifyContent: "space-between" }}>
               <Box py={1}>
                 <a href="/" title="SCIMICS">
@@ -59,7 +59,7 @@ const Topbar = ({ items, handleSidebar, handleDialog }) => {
               <Hidden mdDown>
                 <Box display="flex" alignItems="center">
                   {items.map((item, index) => (
-                    <Box key={index} sx={{ display: "flex", height: "72px", alignItems: "center" }}>
+                    <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
                       <Box
                         className={classes.menuItem}
                         component={!item.isDialog ? RouterLink : item.target ? "a" : "div"}

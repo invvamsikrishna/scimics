@@ -1,11 +1,11 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Container, Typography, Box, Stack, Grid, Avatar } from "@mui/material";
-import { PAGE_PADDING, PUBLIC_URL } from "../../constants";
+import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 
 const useStyles = makeStyles((theme) => ({
-  backgroundStrip: { height: "60px", backgroundColor: "#131315", marginTop: 80, marginBottom: 40, display: "flex", justifyContent: "center", alignItems: "center", borderBottom: "1px solid #222326", position: "relative" },
-  subStrip: { height: "59px", backgroundColor: "#131315", display: "flex", justifyContent: "center", alignItems: "center", position: "relative", zIndex: 2 },
+  backgroundStrip: { height: "40px", backgroundColor: "#131315", marginTop: 80, marginBottom: 40, display: "flex", justifyContent: "center", alignItems: "center", borderBottom: "1px solid #222326", position: "relative" },
+  subStrip: { height: "49px", width: "100%", backgroundColor: "#131315", display: "flex", justifyContent: "space-between", alignItems: "center", position: "relative", zIndex: 2 },
   parameterBlock1: {
     "&:before": {
       position: "absolute",
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     "&:before": {
       position: "absolute",
       top: -95,
-      left: 400,
+      left: 320,
       right: 400,
       height: 130,
       zIndex: 1,
@@ -55,40 +55,29 @@ const useStyles = makeStyles((theme) => ({
 const Parameters = () => {
   const classes = useStyles();
 
-  const scrollItems = [
-    { name: "Cognitive Abilities" },
-    { name: "Communication Skills " },
-    { name: "Technical Proficiency" },
-    { name: "Interpersonal and Teamwork Skills" },
-    { name: "Interpersonal and Teamwork Skills" },
-    { name: "Cognitive Abilities" },
-    { name: "Communication Skills " },
-    { name: "Technical Proficiency" },
-    { name: "Interpersonal and Teamwork Skills" },
-    { name: "Interpersonal and Teamwork Skills" },
-  ];
+  const scrollItems = [{ name: "Cognitive Abilities" }, { name: "Communication Skills ", isActive: true }, { name: "Technical Proficiency" }, { name: "Interpersonal and Teamwork Skills" }];
 
   const items = [
-    { name: "Parent and sub-issues.", desc: "Break larger tasks into smaller issues." },
-    { name: "Automated backlog.", desc: "Linear will auto-close and auto-archive issues." },
-    { name: "Custom workflows.", desc: "Define unique issue states for each team." },
-    { name: "Filters and custom views.", desc: "See only what’s relevant for you." },
-    { name: "Discussion.", desc: "Collaborate on issues without losing context." },
-    { name: "Issue templates.", desc: "Guide your team to write effective issues." },
+    { name: "Parent and sub-issues.", desc: "Break larger tasks into smaller issues.", icon: `${PUBLIC_URL}/static/icons/sm-para1.svg` },
+    { name: "Automated backlog.", desc: "Linear will auto-close and auto-archive issues.", icon: `${PUBLIC_URL}/static/icons/sm-para2.svg` },
+    { name: "Custom workflows.", desc: "Define unique issue states for each team.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
+    { name: "Filters and custom views.", desc: "See only what’s relevant for you.", icon: `${PUBLIC_URL}/static/icons/sm-para4.svg` },
+    { name: "Discussion.", desc: "Collaborate on issues without losing context.", icon: `${PUBLIC_URL}/static/icons/sm-para5.svg` },
+    { name: "Issue templates.", desc: "Guide your team to write effective issues.", icon: `${PUBLIC_URL}/static/icons/sm-para6.svg` },
   ];
 
   return (
     <>
-      <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING, mt: 2 }}>
+      <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 2 }}>
         <Container maxWidth="md">
           <Box sx={{ textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <Avatar src={`${PUBLIC_URL}/static/icons/ceo.svg`} sx={{ width: 48, height: 48 }} />
+            <Avatar src={`${PUBLIC_URL}/static/icons/ceo.svg`} sx={{ width: 56, height: 56 }} />
 
-            <Typography mt={3} variant="body1" fontWeight="normal" sx={{ mb: 2 }}>
+            <Typography mt={3} variant="body1" fontWeight="500" sx={{ mb: 2 }}>
               Invest in Your Talent. Gain the Skills Your Org Needs to Meet Business Goals and Innovate. Future-proof Your Corporate Workforce with Skill Development. Demo Udemy Business.
             </Typography>
 
-            <Typography variant="body1" fontWeight="normal" color="text.subtitle">
+            <Typography variant="body1" fontWeight="500" color="text.disabled">
               CEO, RUSA
             </Typography>
           </Box>
@@ -111,11 +100,11 @@ const Parameters = () => {
                   </Box>
 
                   <Box sx={{ height: 240, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Typography variant="h3" gutterBottom>
+                    <Typography variant="h2" fontWeight={700} gutterBottom>
                       7 - Parameters Test
                     </Typography>
 
-                    <Typography variant="body2" color="text.subtitle">
+                    <Typography variant="body2" color="text.disabled">
                       A 7-parameter test offers comprehensive insights with precision, leaving no stone unturned in evaluating complex variables.
                     </Typography>
                   </Box>
@@ -135,36 +124,34 @@ const Parameters = () => {
       <Box className={classes.backgroundStrip}>
         <Box className={classes.parameterBlock3} />
 
-        <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING }}>
+        <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH }}>
           <Box px={20} className={classes.subStrip}>
-            <Stack direction="row" spacing={3} sx={{ overflow: "hidden" }}>
-              {scrollItems.map((item, index) => (
-                <Box key={index}>
-                  <Typography variant="subtitle2" fontWeight="normal" color="text.disabled" noWrap>
-                    {item.name}
-                  </Typography>
-                </Box>
-              ))}
-            </Stack>
+            {scrollItems.map((item, index) => (
+              <Box key={index}>
+                <Typography variant="subtitle2" fontSize={14} fontWeight="400" color={item.isActive ? "text.primary" : "text.disabled"} noWrap>
+                  {item.name}
+                </Typography>
+              </Box>
+            ))}
           </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="false" disableGutters sx={{ padding: PAGE_PADDING, mb: 2 }}>
+      <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH }}>
         <Box px={10}>
           <Box py={3} px={10}>
-            <Grid container rowSpacing={3} columnSpacing={5}>
+            <Grid container rowSpacing={8} columnSpacing={12}>
               <Grid item xs={12} md={12}>
-                <Box p={2}>
+                <Box>
                   <Stack direction="row" spacing={1} sx={{ alignItems: "center", mb: 1 }}>
-                    <Box component="img" src={`${PUBLIC_URL}/static/icons/para1.svg`} sx={{ width: 20, height: 20 }} />
+                    <Box component="img" src={`${PUBLIC_URL}/static/icons/sm-para.svg`} sx={{ width: 20, height: 20 }} />
 
-                    <Typography variant="h6" fontWeight="500">
+                    <Typography variant="h6" fontSize={22} fontWeight="700">
                       3rd parameter
                     </Typography>
                   </Stack>
 
-                  <Typography variant="subtitle2" fontWeight="normal" color="text.secondary">
+                  <Typography variant="subtitle2" fontSize={16} fontWeight="normal" color="text.secondary">
                     parameter determines the amount of text that the model takes.
                   </Typography>
                 </Box>
@@ -172,25 +159,24 @@ const Parameters = () => {
 
               {items.map((item, index) => (
                 <Grid key={index} item xs={12} sm={6} md={4}>
-                  <Box p={2}>
-                    <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
-                      <Box component="img" src={`${PUBLIC_URL}/static/icons/para1.svg`} sx={{ width: 20, height: 20 }} />
+                  <Box>
+                    <Stack direction="row" spacing={1}>
+                      <Box sx={{ width: 20, height: 20, pt: "2px" }}>
+                        <Box component="img" src={item.icon} sx={{ width: 20, height: 20 }} />
+                      </Box>
 
                       <Typography variant="subtitle2" fontWeight="500">
                         {item.name + " "}
+
                         <Typography component="span" sx={{ fontSize: "0.875rem", fontWeight: "normal", color: "text.subtitle" }}>
                           {item.desc}
                         </Typography>
                       </Typography>
                     </Stack>
-
-                    <Typography variant="subtitle2" fontWeight="normal"></Typography>
                   </Box>
                 </Grid>
               ))}
             </Grid>
-
-            <Box p={2} />
           </Box>
         </Box>
       </Container>

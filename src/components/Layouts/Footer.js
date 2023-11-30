@@ -66,7 +66,7 @@ const Footer = () => {
               </a>
             </Box>
 
-            <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
+            <Stack direction="row" spacing={1.5} sx={{ mt: 3 }}>
               {socialItems.map((item, index) => (
                 <Link key={index} className={classes.socialIcon} target="_blank">
                   <Box component="img" src={item.image} sx={{ width: 24 }} />
@@ -76,7 +76,7 @@ const Footer = () => {
           </Grid>
 
           <Grid item md={6} lg={3}>
-            <Typography variant="subtitle1" fontWeight="500" color="text.primary" sx={{ mb: 4 }}>
+            <Typography variant="subtitle1" fontWeight="600" color="text.primary" sx={{ mb: 4 }}>
               Solutions
             </Typography>
 
@@ -92,7 +92,7 @@ const Footer = () => {
           </Grid>
 
           <Grid item md={6} lg={3}>
-            <Typography variant="subtitle1" fontWeight="500" color="text.primary" sx={{ mb: 4 }}>
+            <Typography variant="subtitle1" fontWeight="600" color="text.primary" sx={{ mb: 4 }}>
               Explore
             </Typography>
 
@@ -108,7 +108,7 @@ const Footer = () => {
           </Grid>
 
           <Grid item md={6} lg={3}>
-            <Typography variant="subtitle1" fontWeight="500" color="text.primary" sx={{ mb: 4 }}>
+            <Typography variant="subtitle1" fontWeight="600" color="text.primary" sx={{ mb: 4 }}>
               Company
             </Typography>
 
@@ -128,16 +128,16 @@ const Footer = () => {
       <Divider />
 
       <Box p={5}>
-        <Stack direction="row" justifyContent="center" alignItems="center" spacing={{ xs: 2, md: 5 }}>
+        <Stack direction="row" justifyContent="center" alignItems="center" spacing={{ xs: 2, md: 6 }}>
           {footerItems.map((item, index) => (
             <React.Fragment key={index}>
               <Link underline="none" target="_blank">
-                <Typography variant="subtitle1" fontWeight="normal" color="text.primary">
+                <Typography variant="subtitle1" fontWeight="500" color="text.primary">
                   {item.name}
                 </Typography>
               </Link>
 
-              {index < footerItems.length - 1 && <Divider orientation="vertical" sx={{ borderWidth: 2, borderColor: "#D9D9D950", height: 36 }} />}
+              {index < footerItems.length - 1 && <Divider orientation="vertical" sx={{ borderWidth: 2, borderColor: "#D9D9D980", height: 36 }} />}
             </React.Fragment>
           ))}
         </Stack>

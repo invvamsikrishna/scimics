@@ -91,6 +91,7 @@ const DARK_PRIMARY = {
 const DARK_BACKGROUND = {
   paper: "#0E0F11",
   default: "#0E0F11",
+  disabled: "#313035",
 };
 
 const DARK_TEXT = {
@@ -98,7 +99,7 @@ const DARK_TEXT = {
   primary: GREY[100],
   secondary: GREY[300],
   subtitle: GREY[400],
-  disabled: GREY[500],
+  disabled: alpha("#C6C3C3", 0.8),
 };
 
 const palette = {
