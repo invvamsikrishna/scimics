@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/scimics/static/js/main.a18ab2f0.js",
-    "static/js/787.10b68657.chunk.js": "/scimics/static/js/787.10b68657.chunk.js",
-    "index.html": "/scimics/index.html",
-    "main.a18ab2f0.js.map": "/scimics/static/js/main.a18ab2f0.js.map",
-    "787.10b68657.chunk.js.map": "/scimics/static/js/787.10b68657.chunk.js.map"
+    "main.css": "/scimics/static/css/main.d58da632.css",
+    "main.js": "/scimics/static/js/main.22702619.js",
+    "static/js/27.82dd9834.chunk.js": "/scimics/static/js/27.82dd9834.chunk.js",
+    "index.html": "/scimics/index.html"
   },
   "entrypoints": [
-    "static/js/main.a18ab2f0.js"
+    "static/css/main.d58da632.css",
+    "static/js/main.22702619.js"
   ]
 }
