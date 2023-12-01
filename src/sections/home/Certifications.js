@@ -39,7 +39,7 @@ const Certifications = () => {
   };
 
   return (
-    <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 4, mb: 10 }}>
+    <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 8, mb: 10 }}>
       <Container maxWidth="md">
         <Box sx={{ textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
           <Typography mt={3} variant="h3" fontWeight="500" sx={{ mb: 1 }}>

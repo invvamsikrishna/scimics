@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { Container, Typography, Box, Stack, Grid, Avatar } from "@mui/material";
+import { Container, Typography, Box, Stack, Grid, Avatar, Link } from "@mui/material";
 import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 
 const useStyles = makeStyles((theme) => ({
@@ -52,19 +52,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const parametersItems = [
+  {
+    name: "Technical Proficiency",
+    desc: "This segment focuses on gauging a student's grasp and application of core concepts in their specific field of study, ranging from Computer Science and Mechanical Engineering to business-oriented courses like MBA and BBA.",
+    icon: `${PUBLIC_URL}/static/icons/sm-para.svg`,
+    children: [
+      { name: "Core Concept Understanding", desc: "Assess the student's knowledge of the fundamental theories and principles in their major.", icon: `${PUBLIC_URL}/static/icons/sm-para1.svg` },
+      { name: "For Engineering Majors", desc: "Hands-on coding or problem-solving tasks.", icon: `${PUBLIC_URL}/static/icons/sm-para2.svg` },
+      { name: "For Non-Engineering Majors", desc: "Basic computer knowledge assessments.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
+    ],
+  },
+  {
+    name: "Communication Skills",
+    desc: "This area evaluates a student's proficiency in English communication, essential for effective interaction in professional settings.",
+    icon: `${PUBLIC_URL}/static/icons/sm-para.svg`,
+    children: [
+      { name: "English Speaking", desc: "Essential for coherent verbal expression and effective interpersonal interaction.", icon: `${PUBLIC_URL}/static/icons/sm-para1.svg` },
+      { name: "Listening", desc: "Hands-on coding or problem-solving tasks.", icon: `${PUBLIC_URL}/static/icons/sm-para2.svg` },
+      { name: "Writing", desc: "Demonstrates the ability to clearly and precisely convey ideas in written form.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
+      { name: "Reading", desc: "Vital for understanding and analyzing written texts, crucial in academic and professional contexts.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
+    ],
+  },
+  {
+    name: "Cognitive Abilities",
+    desc: "This segment tests a student's quantitative aptitude and analytical reasoning, essential for roles requiring data analysis, financial decision-making, or critical thinking.",
+    icon: `${PUBLIC_URL}/static/icons/sm-para.svg`,
+    children: [
+      { name: "Quantitative Aptitude", desc: "Assess numerical data handling, mathematical calculations, and understanding quantitative relationships.", icon: `${PUBLIC_URL}/static/icons/sm-para1.svg` },
+      { name: "Analytical Reasoning", desc: "Evaluate the ability to analyze complex information, recognize patterns, and draw logical conclusions.", icon: `${PUBLIC_URL}/static/icons/sm-para2.svg` },
+    ],
+  },
+  {
+    name: "Personality and Behaviour",
+    desc: 'The "Personality and Behavior" section assesses vital soft skills necessary for professional growth, including teamwork, adaptability, efficient project and time management, and professional etiquette, crucial for thriving in dynamic work environments.',
+    icon: `${PUBLIC_URL}/static/icons/sm-para.svg`,
+    children: [
+      { name: "Interpersonal and Teamwork Skills", desc: "Crucial for collaboration and effective interaction within teams.", icon: `${PUBLIC_URL}/static/icons/sm-para1.svg` },
+      { name: "Adaptability and Continuous Learning", desc: "Reflects the ability to embrace change and pursue ongoing personal and professional development.", icon: `${PUBLIC_URL}/static/icons/sm-para2.svg` },
+      { name: "Project Management and Time Management", desc: "Essential for organizing, planning, and executing tasks efficiently within set deadlines.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
+      { name: "Professional Etiquette and Interview Preparedness", desc: "Key to presenting oneself appropriately in professional settings and during job interviews.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
+    ],
+  },
+];
+
 const Parameters = () => {
   const classes = useStyles();
-
-  const scrollItems = [{ name: "Cognitive Abilities" }, { name: "Communication Skills ", isActive: true }, { name: "Technical Proficiency" }, { name: "Interpersonal and Teamwork Skills" }];
-
-  const items = [
-    { name: "Parent and sub-issues.", desc: "Break larger tasks into smaller issues.", icon: `${PUBLIC_URL}/static/icons/sm-para1.svg` },
-    { name: "Automated backlog.", desc: "Linear will auto-close and auto-archive issues.", icon: `${PUBLIC_URL}/static/icons/sm-para2.svg` },
-    { name: "Custom workflows.", desc: "Define unique issue states for each team.", icon: `${PUBLIC_URL}/static/icons/sm-para3.svg` },
-    { name: "Filters and custom views.", desc: "See only what’s relevant for you.", icon: `${PUBLIC_URL}/static/icons/sm-para4.svg` },
-    { name: "Discussion.", desc: "Collaborate on issues without losing context.", icon: `${PUBLIC_URL}/static/icons/sm-para5.svg` },
-    { name: "Issue templates.", desc: "Guide your team to write effective issues.", icon: `${PUBLIC_URL}/static/icons/sm-para6.svg` },
-  ];
+  const [currentParams, setCurrentParams] = useState(parametersItems[0]);
 
   return (
     <>
@@ -126,12 +160,12 @@ const Parameters = () => {
           <Box className={classes.parameterBlock3} />
 
           <Box className={classes.subStrip}>
-            {scrollItems.map((item, index) => (
-              <Box key={index}>
-                <Typography variant="subtitle2" fontSize={14} fontWeight="400" color={item.isActive ? "text.primary" : "text.disabled"} noWrap>
+            {parametersItems.map((item, index) => (
+              <Link key={index} underline="none" component="button" onClick={() => setCurrentParams(item)}>
+                <Typography variant="subtitle2" fontSize={14} fontWeight="400" color={item.name == currentParams.name ? "text.primary" : "text.disabled"} noWrap>
                   {item.name}
                 </Typography>
-              </Box>
+              </Link>
             ))}
           </Box>
         </Container>
@@ -140,31 +174,31 @@ const Parameters = () => {
       <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH }}>
         <Box px={10}>
           <Box py={3}>
-            <Grid container rowSpacing={8} columnSpacing={12}>
+            <Grid container rowSpacing={8} columnSpacing={12} justifyContent="space-between">
               <Grid item xs={12} md={12}>
                 <Box>
                   <Stack direction="row" spacing={1} sx={{ alignItems: "center", mb: 1 }}>
                     <Box component="img" src={`${PUBLIC_URL}/static/icons/sm-para.svg`} sx={{ width: 20, height: 20 }} />
 
                     <Typography variant="h6" fontSize={22} fontWeight="700">
-                      3rd parameter
+                      {currentParams.name}
                     </Typography>
                   </Stack>
 
                   <Typography variant="subtitle2" fontSize={16} fontWeight="normal" color="text.secondary">
-                    parameter determines the amount of text that the model takes.
+                    {currentParams.desc}
                   </Typography>
                 </Box>
               </Grid>
 
-              {items.map((item, index) => (
+              {currentParams.children?.map((item, index) => (
                 <Grid key={index} item xs={12} sm={6} md={4}>
-                  <Box>
-                    <Stack direction="row" spacing={1}>
-                      <Box sx={{ width: 20, height: 20, pt: "2px" }}>
-                        <Box component="img" src={item.icon} sx={{ width: 20, height: 20 }} />
-                      </Box>
+                  <Stack direction="row" alignItems="start" spacing={1}>
+                    <Box sx={{ width: "16px" }}>
+                      <Box component="img" src={item.icon} sx={{ height: "100%", width: "100%", mt: "4px" }} />
+                    </Box>
 
+                    <Box sx={{ width: "100%" }}>
                       <Typography variant="subtitle2" fontWeight="500">
                         {item.name + " "}
 
@@ -172,8 +206,8 @@ const Parameters = () => {
                           {item.desc}
                         </Typography>
                       </Typography>
-                    </Stack>
-                  </Box>
+                    </Box>
+                  </Stack>
                 </Grid>
               ))}
             </Grid>
