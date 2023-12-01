@@ -1,15 +1,8 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { IconButton, List, ListItem, Divider, Typography, Grid, Container, Stack, TextField, Button, Box, Link } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YoutubeIcon from "@mui/icons-material/YouTube";
-import LocationIcon from "@mui/icons-material/LocationOn";
-import PhoneIcon from "@mui/icons-material/Phone";
-import MailIcon from "@mui/icons-material/Mail";
 import { NavLink as RouterLink } from "react-router-dom";
-import { PUBLIC_URL } from "../../constants";
+import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,7 +50,7 @@ const Footer = () => {
     <div className={classes.root}>
       <Divider />
 
-      <Container maxWidth="false" disableGutters sx={{ px: { xs: 4, md: 12 } }}>
+      <Container maxWidth="false" disableGutters sx={{ maxWidth: MAXWIDTH }}>
         <Grid container spacing={5} pt={1} pb={5} mt={2}>
           <Grid item md={6} lg={3}>
             <Box py={1}>

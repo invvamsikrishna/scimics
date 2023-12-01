@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       position: "absolute",
       top: 140,
       left: "50%",
-      height: 40,
+      height: 70,
       width: 144,
       zIndex: 1,
       content: "' '",
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       position: "absolute",
       top: 80,
       left: "50%",
-      height: 40,
+      height: 70,
       width: 144,
       zIndex: 1,
       content: "' '",
@@ -118,7 +118,7 @@ const Technologies = () => {
         <Box component="img" src={`${PUBLIC_URL}/static/images/mock.png`} sx={{ width: "100%" }} />
       </Container>
 
-      <Container maxWidth="sm" disableGutters sx={{ mt: 20, mb: 20 }}>
+      <Container maxWidth="sm" disableGutters sx={{ mt: 20, mb: 16 }}>
         <Stack direction="row" justifyContent="center">
           <Box sx={{ height: 80, width: 80, backgroundImage: "linear-gradient(#5C67C7, #23329C)", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "6px" }}>
             <Box component="img" src={`${PUBLIC_URL}/static/icons/future.svg`} sx={{ width: 50, height: 50 }} />
@@ -136,7 +136,7 @@ const Technologies = () => {
             Experience the most enjoyable, powerful way for you to learn and transform your career.
           </Typography>
 
-          <Box p={2} />
+          <Box p={5} />
 
           <CustomButton title="Request Early Access" />
         </Box>

@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     "&:before": {
       position: "absolute",
       top: -81,
-      left: 0,
+      left: 40,
       right: "75%",
       height: 350,
       zIndex: 1,
@@ -116,7 +116,7 @@ const ELearning = () => {
       <Box sx={{ position: "relative" }}>
         <Box className={classes.elearningBlock2} />
 
-        <Stack direction="row" spacing={3} sx={{ transform: "translateX(-40px)", position: "relative", zIndex: 2 }}>
+        <Stack direction="row" spacing={3} sx={{ position: "relative", zIndex: 2 }}>
           <Box sx={{ height: 80, width: 80, backgroundImage: "linear-gradient(#5C67C7, #23329C)", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "6px" }}>
             <Box component="img" src={`${PUBLIC_URL}/static/icons/education.svg`} sx={{ width: 60, height: 60 }} />
           </Box>
@@ -133,8 +133,8 @@ const ELearning = () => {
 
         <Box sx={{ height: 80 }} />
 
-        <Box px={10}>
-          <Box pt={3} px={10} sx={{ bgcolor: "background.default", border: "1px solid #55555550", borderRadius: 4, position: "relative", zIndex: 2 }}>
+        <Box pl={10}>
+          <Box pt={3} px={5} sx={{ bgcolor: "background.default", border: "1px solid #55555550", borderRadius: 4, position: "relative", zIndex: 2 }}>
             <Grid container spacing={2}>
               {items.map((item, index) => (
                 <Grid key={index} item xs={12} sm={6} md={3}>
@@ -159,13 +159,15 @@ const ELearning = () => {
               ))}
             </Grid>
 
-            <Box p={2} />
+            <Box p={1} />
 
-            <OwlCarousel className="owl-theme" startPosition={currentItem} ref={owlCarouselRef} {...options} onTranslated={handleChange}>
-              {items.map((item, index) => (
-                <Box key={index} component="img" src={item.image} sx={{ width: "100%" }} />
-              ))}
-            </OwlCarousel>
+            <Box sx={{ transform: "translateY(20px)" }}>
+              <OwlCarousel className="owl-theme" startPosition={currentItem} ref={owlCarouselRef} {...options} onTranslated={handleChange}>
+                {items.map((item, index) => (
+                  <Box key={index} component="img" src={item.image} sx={{ width: "100%" }} />
+                ))}
+              </OwlCarousel>
+            </Box>
           </Box>
         </Box>
       </Box>

@@ -12,13 +12,11 @@ const Hero = () => {
       <Grid container sx={{ backgroundImage: `url(${PUBLIC_URL}/static/images/hero_bg.svg)`, backgroundRepeat: "no-repeat", backgroundPosition: "right", backgroundSize: "contain", height: "520px" }}>
         <Grid item xs={12} md={8}>
           <Box sx={{ pt: 6 }}>
-            <Box sx={{ mb: 5, display: "flex", alignItems: "center", justifyContent: "start" }}>
-              <Box sx={{ py: 0.3, px: 2, bgcolor: "#ffffff1a", borderRadius: "50px", border: "1px solid #ffffff1a" }}>
-                <Typography variant="caption" color="text.primary" fontSize={13} fontWeight={500}>
-                  Lauching our Private Beta
+            <Box sx={{ mb: 5, display: "flex", alignItems: "center" }}>
+              <Box sx={{ py: 0.5, px: 2, bgcolor: "#ffffff1a", borderRadius: "50px", border: "1px solid #ffffff1a" }}>
+                <Typography variant="subtitle2" color="text.primary" fontSize={13} fontWeight={500} sx={{ lineHeight: 1.5, display: "flex", alignItems: "center" }}>
+                  Lauching our Private Beta <ArrowForwardIosRoundedIcon sx={{ ml: 1, width: "10px", height: "10px" }} />
                 </Typography>
-
-                <ArrowForwardIosRoundedIcon sx={{ ml: 1, width: "10px", height: "10px" }} />
               </Box>
             </Box>
 
@@ -27,18 +25,11 @@ const Hero = () => {
             </Typography>
 
             <Typography variant="h2" color="text.primary" fontWeight={500}>
+              Begins with{" "}
               <Typewriter
+                component="span"
                 onInit={(typewriter) => {
-                  typewriter
-                    .typeString("Begins with ")
-                    .typeString('<span style="color: #CED765">E-Learning</span>')
-                    .pauseFor(2500)
-                    .deleteAll()
-                    .typeString("Is Validated with ")
-                    .typeString('<span style="color: #CED765">Certificates</span>')
-                    .pauseFor(2500)
-                    .deleteAll()
-                    .start();
+                  typewriter.typeString('<span style="color: #CED765">E-Learning</span>').pauseFor(2500).deleteAll().typeString('<span style="color: #CED765">Certification</span>').pauseFor(2500).deleteAll().start();
                 }}
                 options={{
                   autoStart: true,

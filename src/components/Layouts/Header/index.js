@@ -11,6 +11,7 @@ const items = [
   {
     title: "Request Access",
     link: "/home#",
+    color: "primary.main",
   },
 ];
 

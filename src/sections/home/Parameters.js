@@ -4,14 +4,14 @@ import { Container, Typography, Box, Stack, Grid, Avatar } from "@mui/material";
 import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 
 const useStyles = makeStyles((theme) => ({
-  backgroundStrip: { height: "40px", backgroundColor: "#131315", marginTop: 80, marginBottom: 40, display: "flex", justifyContent: "center", alignItems: "center", borderBottom: "1px solid #222326", position: "relative" },
-  subStrip: { height: "49px", width: "100%", backgroundColor: "#131315", display: "flex", justifyContent: "space-between", alignItems: "center", position: "relative", zIndex: 2 },
+  backgroundStrip: { height: "50px", backgroundColor: "#131315", marginTop: 80, marginBottom: 40, display: "flex", justifyContent: "center", alignItems: "center", borderBottom: "1px solid #222326", position: "relative" },
+  subStrip: { height: "49px", width: "100%", backgroundColor: "#131315", display: "flex", justifyContent: "space-around", alignItems: "center", position: "relative", zIndex: 2 },
   parameterBlock1: {
     "&:before": {
       position: "absolute",
       top: -40,
       left: "50%",
-      right: 280,
+      right: 200,
       height: 104,
       zIndex: 1,
       content: "' '",
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     "&:before": {
       position: "absolute",
       top: 64,
-      right: 80,
+      right: 0,
       height: 300,
       width: 200,
       zIndex: 1,
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     "&:before": {
       position: "absolute",
       top: -95,
-      left: 320,
+      left: 160,
       right: 400,
       height: 130,
       zIndex: 1,
@@ -90,7 +90,7 @@ const Parameters = () => {
           <Box className={classes.parameterBlock2} />
 
           <Box px={10} sx={{ position: "relative", zIndex: 2 }}>
-            <Grid container spacing={3} px={10} justifyContent="end">
+            <Grid container spacing={3} justifyContent="end">
               <Grid item xs={12} md={6}>
                 <Stack alignItems="end" textAlign="end">
                   <Box pr={10}>
@@ -122,10 +122,10 @@ const Parameters = () => {
       </Container>
 
       <Box className={classes.backgroundStrip}>
-        <Box className={classes.parameterBlock3} />
+        <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, position: "relative" }}>
+          <Box className={classes.parameterBlock3} />
 
-        <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH }}>
-          <Box px={20} className={classes.subStrip}>
+          <Box className={classes.subStrip}>
             {scrollItems.map((item, index) => (
               <Box key={index}>
                 <Typography variant="subtitle2" fontSize={14} fontWeight="400" color={item.isActive ? "text.primary" : "text.disabled"} noWrap>
@@ -139,7 +139,7 @@ const Parameters = () => {
 
       <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH }}>
         <Box px={10}>
-          <Box py={3} px={10}>
+          <Box py={3}>
             <Grid container rowSpacing={8} columnSpacing={12}>
               <Grid item xs={12} md={12}>
                 <Box>

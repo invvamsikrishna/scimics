@@ -67,7 +67,7 @@ const Topbar = ({ items, handleSidebar, handleDialog }) => {
                         to={item.link}
                         onClick={() => handleDialog(item)}
                         sx={{
-                          color: match(item.link) ? "primary.main" : "text.primary",
+                          color: match(item.link) ? "primary.main" : item.color != null ? item.color : "text.primary",
                           "&:hover": {
                             color: "primary.main",
                           },
