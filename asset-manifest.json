@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/scimics/static/css/main.d58da632.css",
-    "main.js": "/scimics/static/js/main.731455a9.js",
+    "main.js": "/scimics/static/js/main.a139f5e4.js",
     "static/js/27.82dd9834.chunk.js": "/scimics/static/js/27.82dd9834.chunk.js",
     "index.html": "/scimics/index.html"
   },
   "entrypoints": [
     "static/css/main.d58da632.css",
-    "static/js/main.731455a9.js"
+    "static/js/main.a139f5e4.js"
   ]
 }
