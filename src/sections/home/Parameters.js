@@ -135,11 +135,11 @@ const Parameters = () => {
 
                   <Box sx={{ height: 240, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Typography variant="h2" fontWeight={700} gutterBottom>
-                      7 - Parameters Test
+                      I-CAP Test
                     </Typography>
 
                     <Typography variant="body2" color="text.disabled">
-                      A 7-parameter test offers comprehensive insights with precision, leaving no stone unturned in evaluating complex variables.
+                      An ICAP test offers comprehensive insights with precision, leaving no stone unturned in evaluating complex variables.
                     </Typography>
                   </Box>
 

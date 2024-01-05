@@ -136,7 +136,7 @@ const Footer = () => {
         </Stack>
 
         <Typography variant="body1" color="white" textAlign="center" sx={{ mt: 5 }}>
-          Copyright@2023, scimics
+          Copyright@2023, SCIMICS
         </Typography>
       </Box>
     </div>
