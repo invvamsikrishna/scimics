@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Container, Typography, Box, Stack, Grid, Avatar, Link } from "@mui/material";
 import { MAXWIDTH, PUBLIC_URL } from "../../constants";
+import en from "../common/en.json";
+
+const { ceoDescription, ceoTitle, icapTest, parameterItems, requestAccessButton } = en.parametersSection;
+
 
 const useStyles = makeStyles((theme) => ({
   backgroundStrip: { height: "50px", backgroundColor: "#131315", marginTop: 80, marginBottom: 40, display: "flex", justifyContent: "center", alignItems: "center", borderBottom: "1px solid #222326", position: "relative" },
@@ -51,7 +55,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
+const parametrsnamesheads = parameterItems.map((item) => item.name)
+console.log(parametrsnamesheads[0]);
 const parametersItems = [
   {
     name: "Technical Proficiency",
@@ -97,6 +102,7 @@ const parametersItems = [
 ];
 
 const Parameters = () => {
+
   const classes = useStyles();
   const [currentParams, setCurrentParams] = useState(parametersItems[0]);
 

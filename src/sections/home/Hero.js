@@ -5,8 +5,13 @@ import CustomButton from "../../components/CustomButton";
 import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 import Typewriter from "typewriter-effect";
 import RequestAccessDialog from "../common/RequestAccessDialog";
+import en from "../common/en.json";
+
+
 
 const Hero = () => {
+  const { launchMessage, successJourneyTitle, successJourneySubtitle, additionalInfo, requestAccessButton } = en.heroSection;
+  console.log(launchMessage);
   return (
     <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, my: 5 }}>
       <Grid container sx={{ backgroundImage: `url(${PUBLIC_URL}/static/images/hero_bg.svg)`, backgroundRepeat: "no-repeat", backgroundPosition: "right", backgroundSize: "contain", height: "520px" }}>
@@ -15,21 +20,22 @@ const Hero = () => {
             <Box sx={{ mb: 5, display: "flex", alignItems: "center" }}>
               <Box sx={{ py: 0.5, px: 2, bgcolor: "#ffffff1a", borderRadius: "50px", border: "1px solid #ffffff1a" }}>
                 <Typography variant="subtitle2" color="text.primary" fontSize={13} fontWeight={500} sx={{ lineHeight: 1.5, display: "flex", alignItems: "center" }}>
-                  Lauching our Private Beta <ArrowForwardIosRoundedIcon sx={{ ml: 1, width: "10px", height: "10px" }} />
+                  {launchMessage} <ArrowForwardIosRoundedIcon sx={{ ml: 1, width: "10px", height: "10px" }} />
                 </Typography>
               </Box>
             </Box>
 
             <Typography variant="h2" color="text.primary" fontWeight={500}>
-              Your Success Journey
+              {successJourneyTitle}
             </Typography>
 
             <Typography variant="h2" color="text.primary" fontWeight={500}>
-              Begins with{" "}
+
+              {successJourneySubtitle}{" "}
               <Typewriter
                 component="span"
                 onInit={(typewriter) => {
-                  typewriter.typeString('<span style="color: #CED765">E-Learning</span>').pauseFor(2500).deleteAll().typeString('<span style="color: #CED765">Certification</span>').pauseFor(2500).deleteAll().start();
+                  typewriter.typeString(`<span style="color: #CED765">${en.heroSection.successJourneyTerms[0].term}</span>`).pauseFor(2500).deleteAll().typeString(`<span style="color: #CED765">${en.heroSection.successJourneyTerms[1].term}</span>`).pauseFor(2500).deleteAll().start();
                 }}
                 options={{
                   autoStart: true,
@@ -40,11 +46,11 @@ const Hero = () => {
             </Typography>
 
             <Typography variant="h6" color="text.disabled" fontSize={20} fontWeight={500} sx={{ mt: 2, mb: 8 }}>
-              Learning, Certifications, AI Resume Builder, Mock Interviews <br />
+              {additionalInfo} <br />
               and Much More..
             </Typography>
 
-            <RequestAccessDialog title="Request Early Access" />
+            <RequestAccessDialog title={requestAccessButton} />
           </Box>
         </Grid>
       </Grid>
