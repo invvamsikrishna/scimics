@@ -1,0 +1,300 @@
+{
+    "heroSection": {
+        "launchMessage": "Launching our Private Beta",
+        "successJourneyTitle": "Your Success Journey",
+        "successJourneySubtitle": "Begins with",
+        "successJourneyTerms": [
+            {
+                "term": "E-Learning"
+            },
+            {
+                "term": "Certification"
+            }
+        ],
+        "additionalInfo": "Learning, Certifications, AI Resume Builder, Mock Interviews and Much More..",
+        "requestAccessButton": "Request Early Access"
+    },
+    "elearningSection": {
+        "title": "E-Learning",
+        "subtitle": "The Most Complete E-learning Platform Available",
+        "items": [
+            {
+                "name": "Projects",
+                "desc": "Every Project is an Opportunity to Build and Learn."
+            },
+            {
+                "name": "Roadmaps",
+                "desc": "AI tailored course plans for your focused learning experience"
+            },
+            {
+                "name": "Coding Env",
+                "desc": "Learn coding seamlessly in our Cloud-Based Environment."
+            },
+            {
+                "name": "AI Assistant",
+                "desc": "Powerful AI that helps you overcome any coding challenge."
+            }
+        ]
+    },
+    "parametersSection": {
+        "ceoDescription": "Invest in Your Talent. Gain the Skills Your Org Needs to Meet Business Goals and Innovate. Future-proof Your Corporate Workforce with Skill Development. Demo Udemy Business.",
+        "ceoTitle": "CEO, RUSA",
+        "icapTest": {
+            "title": "I-CAP Test",
+            "description": "An ICAP test offers comprehensive insights with precision, leaving no stone unturned in evaluating complex variables."
+        },
+        "parameterItems": [
+            {
+                "name": "Technical Proficiency",
+                "desc": "This segment focuses on gauging a student's grasp and application of core concepts in their specific field of study, ranging from Computer Science and Mechanical Engineering to business-oriented courses like MBA and BBA.",
+                "icon": "/static/icons/sm-para.svg",
+                "children": [
+                    {
+                        "name": "Core Concept Understanding",
+                        "desc": "Assess the student's knowledge of the fundamental theories and principles in their major.",
+                        "icon": "/static/icons/sm-para1.svg"
+                    },
+                    {
+                        "name": "For Engineering Majors",
+                        "desc": "Hands-on coding or problem-solving tasks.",
+                        "icon": "/static/icons/sm-para2.svg"
+                    },
+                    {
+                        "name": "For Non-Engineering Majors",
+                        "desc": "Basic computer knowledge assessments.",
+                        "icon": "/static/icons/sm-para3.svg"
+                    }
+                ]
+            },
+            {
+                "name": "Communication Skills",
+                "desc": "This area evaluates a student's proficiency in English communication, essential for effective interaction in professional settings.",
+                "icon": "/static/icons/sm-para.svg",
+                "children": [
+                    {
+                        "name": "English Speaking",
+                        "desc": "Essential for coherent verbal expression and effective interpersonal interaction.",
+                        "icon": "/static/icons/sm-para1.svg"
+                    },
+                    {
+                        "name": "Listening",
+                        "desc": "Hands-on coding or problem-solving tasks.",
+                        "icon": "/static/icons/sm-para2.svg"
+                    },
+                    {
+                        "name": "Writing",
+                        "desc": "Demonstrates the ability to clearly and precisely convey ideas in written form.",
+                        "icon": "/static/icons/sm-para3.svg"
+                    },
+                    {
+                        "name": "Reading",
+                        "desc": "Vital for understanding and analyzing written texts, crucial in academic and professional contexts.",
+                        "icon": "/static/icons/sm-para3.svg"
+                    }
+                ]
+            },
+            {
+                "name": "Cognitive Abilities",
+                "desc": "This segment tests a student's quantitative aptitude and analytical reasoning, essential for roles requiring data analysis, financial decision-making, or critical thinking.",
+                "icon": "/static/icons/sm-para.svg",
+                "children": [
+                    {
+                        "name": "Quantitative Aptitude",
+                        "desc": "Assess numerical data handling, mathematical calculations, and understanding quantitative relationships.",
+                        "icon": "/static/icons/sm-para1.svg"
+                    },
+                    {
+                        "name": "Analytical Reasoning",
+                        "desc": "Evaluate the ability to analyze complex information, recognize patterns, and draw logical conclusions.",
+                        "icon": "/static/icons/sm-para2.svg"
+                    }
+                ]
+            },
+            {
+                "name": "Personality and Behaviour",
+                "desc": "The 'Personality and Behavior' section assesses vital soft skills necessary for professional growth, including teamwork, adaptability, efficient project and time management, and professional etiquette. It's crucial for thriving in dynamic work environments.",
+                "icon": "/static/icons/sm-para.svg",
+                "children": [
+                    {
+                        "name": "Interpersonal and Teamwork Skills",
+                        "desc": "Crucial for collaboration and effective interaction within teams.",
+                        "icon": "/static/icons/sm-para1.svg"
+                    },
+                    {
+                        "name": "Adaptability and Continuous Learning",
+                        "desc": "Reflects the ability to embrace change and pursue ongoing personal and professional development.",
+                        "icon": "/static/icons/sm-para2.svg"
+                    },
+                    {
+                        "name": "Project Management and Time Management",
+                        "desc": "Essential for organizing, planning, and executing tasks efficiently within set deadlines.",
+                        "icon": "/static/icons/sm-para3.svg"
+                    },
+                    {
+                        "name": "Professional Etiquette and Interview Preparedness",
+                        "desc": "Key to presenting oneself appropriately in professional settings and during job interviews.",
+                        "icon": "/static/icons/sm-para3.svg"
+                    }
+                ]
+            }
+        ]
+    },
+    "certificationsSection": {
+        "title": "Comprehensive Certifications Under One Roof",
+        "subtitle": "Achieve Recognition: Dive into a curated selection from our extensive catalog of industry-leading certifications.",
+        "carouselItems": [
+            {
+                "image": "/static/icons/js.svg"
+            },
+            {
+                "image": "/static/icons/html.svg"
+            },
+            {
+                "image": "/static/icons/css.svg"
+            },
+            {
+                "image": "/static/icons/python.svg"
+            },
+            {
+                "image": "/static/icons/c++.svg"
+            },
+            {
+                "image": "/static/icons/go.svg"
+            },
+            {
+                "image": "/static/icons/java.svg"
+            }
+        ],
+        "ceoDescription": "Invest in Your Talent. Gain the Skills Your Org Needs to Meet Business Goals and Innovate. Future-proof Your Corporate Workforce with Skill Development. Demo Udemy Business.",
+        "ceoTitle": "CEO, RUSA"
+    },
+    "technologiesSection": {
+        "aiResumeBuilder": {
+            "title": "AI resume builder",
+            "subtitle": "The Most Efficient AI Resume Creator Online"
+        },
+        "mockInterview": {
+            "title": "Mock Interview",
+            "subtitle": "The meaning of a mock interview is self-explanatory"
+        },
+        "builtForYourFuture": {
+            "title": "Built for your future.",
+            "subtitle": "Experience the most enjoyable, powerful way for you to learn and transform your career."
+        },
+        "requestEarlyAccessButton": "Request Early Access"
+    },
+    "footer": {
+        "logoAltText": "SCIMICS",
+        "logoImagePath": "/static/icons/logo.svg",
+        "solutions": "Solutions",
+        "explore": "Explore",
+        "company": "Company",
+        "socialMedia": [
+            {
+                "image": "/static/icons/youtube.svg",
+                "alt": "YouTube"
+            },
+            {
+                "image": "/static/icons/linkedin.svg",
+                "alt": "LinkedIn"
+            },
+            {
+                "image": "/static/icons/facebook.svg",
+                "alt": "Facebook"
+            },
+            {
+                "image": "/static/icons/twitter.svg",
+                "alt": "Twitter"
+            },
+            {
+                "image": "/static/icons/instagram.svg",
+                "alt": "Instagram"
+            },
+            {
+                "image": "/static/icons/quora.svg",
+                "alt": "Quora"
+            }
+        ],
+        "solutionsItems": [
+            {
+                "name": "Career Paths"
+            },
+            {
+                "name": "7 Parameters test"
+            },
+            {
+                "name": "Mocx"
+            },
+            {
+                "name": "Resume Builder"
+            },
+            {
+                "name": "Certifications"
+            },
+            {
+                "name": "Startup Support"
+            }
+        ],
+        "exploreItems": [
+            {
+                "name": "Front end development"
+            },
+            {
+                "name": "Backend development"
+            },
+            {
+                "name": "Full stack"
+            },
+            {
+                "name": "DSA"
+            },
+            {
+                "name": "AI & ML"
+            },
+            {
+                "name": "Startup Support"
+            }
+        ],
+        "companyItems": [
+            {
+                "name": "About"
+            },
+            {
+                "name": "Careers"
+            },
+            {
+                "name": "Support"
+            },
+            {
+                "name": "Reviews"
+            },
+            {
+                "name": "Join discard"
+            },
+            {
+                "name": "Terms of use"
+            },
+            {
+                "name": "Privacy policy"
+            },
+            {
+                "name": "Cookie policy"
+            }
+        ],
+        "footerItems": [
+            {
+                "name": "Tutorials"
+            },
+            {
+                "name": "Blog's"
+            },
+            {
+                "name": "Articles"
+            },
+            {
+                "name": "Videos"
+            }
+        ],
+        "copyright": "Copyright@2023, SCIMICS"
+    }
+}
