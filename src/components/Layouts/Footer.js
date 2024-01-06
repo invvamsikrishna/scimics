@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { IconButton, List, ListItem, Divider, Typography, Grid, Container, Stack, TextField, Button, Box, Link } from "@mui/material";
+import { IconButton, List, ListItem, Divider, Typography, Grid, Container, Stack, Box, Link } from "@mui/material";
 import { NavLink as RouterLink } from "react-router-dom";
 import { MAXWIDTH, PUBLIC_URL } from "../../constants";
+import en from "../../sections/common/en.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // background: theme.palette.primary.dark,
     marginTop: 80,
   },
   logoImage: {
@@ -15,36 +15,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "180px",
   },
   socialIcon: {
-    // padding: 8,
     color: "#fff",
-    // border: "1px solid white",
-    // borderRadius: "0px",
-    // "&:hover": {
-    //   background: "white",
-    //   color: theme.palette.primary.main,
-    // },
   },
 }));
 
 const Footer = () => {
   const classes = useStyles();
 
-  const socialItems = [
-    { image: `${PUBLIC_URL}/static/icons/youtube.svg` },
-    { image: `${PUBLIC_URL}/static/icons/linkedin.svg` },
-    { image: `${PUBLIC_URL}/static/icons/facebook.svg` },
-    { image: `${PUBLIC_URL}/static/icons/twitter.svg` },
-    { image: `${PUBLIC_URL}/static/icons/instagram.svg` },
-    { image: `${PUBLIC_URL}/static/icons/quora.svg` },
-  ];
-
-  const solutionsItems = [{ name: "Career Paths" }, { name: "7 Parameters test" }, { name: "Mocx" }, { name: "Resume Builder" }, { name: "Certifications" }, { name: "Startup Support" }];
-
-  const exploreItems = [{ name: "Front end development" }, { name: "Backend development" }, { name: "Full stack" }, { name: "DSA" }, { name: "AI & ML" }, { name: "Startup Support" }];
-
-  const companyItems = [{ name: "About" }, { name: "Careers" }, { name: "Support" }, { name: "Reviews" }, { name: "Join discard" }, { name: "Terms  of use" }, { name: "Privacy policy" }, { name: "Cookie policy" }];
-
-  const footerItems = [{ name: "Tutorials" }, { name: "Blog's" }, { name: "Articles" }, { name: "Videos" }];
+  const { footer } = en;
 
   return (
     <div className={classes.root}>
@@ -60,9 +38,9 @@ const Footer = () => {
             </Box>
 
             <Stack direction="row" spacing={1.5} sx={{ mt: 3 }}>
-              {socialItems.map((item, index) => (
+              {footer.socialMedia.map((item, index) => (
                 <Link key={index} className={classes.socialIcon} target="_blank">
-                  <Box component="img" src={item.image} sx={{ width: 24 }} />
+                  <Box component="img" src={`${PUBLIC_URL}/static/icons/${item.name.toLowerCase()}.svg`} sx={{ width: 24 }} alt={item.alt} />
                 </Link>
               ))}
             </Stack>
@@ -70,11 +48,11 @@ const Footer = () => {
 
           <Grid item md={6} lg={3}>
             <Typography variant="subtitle1" fontWeight="600" color="text.primary" sx={{ mb: 4 }}>
-              Solutions
+              {footer.solutions}
             </Typography>
 
             <List disablePadding>
-              {solutionsItems.map((item, index) => (
+              {footer.solutionsItems.map((item, index) => (
                 <ListItem key={index} component={RouterLink} to="/" disableGutters>
                   <Typography variant="subtitle2" fontWeight="normal" color="text.secondary">
                     {item.name}
@@ -86,11 +64,11 @@ const Footer = () => {
 
           <Grid item md={6} lg={3}>
             <Typography variant="subtitle1" fontWeight="600" color="text.primary" sx={{ mb: 4 }}>
-              Explore
+              {footer.explore}
             </Typography>
 
             <List disablePadding>
-              {exploreItems.map((item, index) => (
+              {footer.exploreItems.map((item, index) => (
                 <ListItem key={index} component={RouterLink} to="/" disableGutters>
                   <Typography variant="subtitle2" fontWeight="normal" color="text.secondary">
                     {item.name}
@@ -102,11 +80,11 @@ const Footer = () => {
 
           <Grid item md={6} lg={3}>
             <Typography variant="subtitle1" fontWeight="600" color="text.primary" sx={{ mb: 4 }}>
-              Company
+              {footer.company}
             </Typography>
 
             <List disablePadding>
-              {companyItems.map((item, index) => (
+              {footer.companyItems.map((item, index) => (
                 <ListItem key={index} component={RouterLink} to="/" disableGutters>
                   <Typography variant="subtitle2" fontWeight="normal" color="text.secondary">
                     {item.name}
@@ -122,7 +100,7 @@ const Footer = () => {
 
       <Box p={5}>
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={{ xs: 2, md: 6 }}>
-          {footerItems.map((item, index) => (
+          {footer.footerItems.map((item, index) => (
             <React.Fragment key={index}>
               <Link underline="none" target="_blank">
                 <Typography variant="subtitle1" fontWeight="500" color="text.primary">
@@ -130,13 +108,13 @@ const Footer = () => {
                 </Typography>
               </Link>
 
-              {index < footerItems.length - 1 && <Divider orientation="vertical" sx={{ borderWidth: 2, borderColor: "#D9D9D980", height: 36 }} />}
+              {index < footer.footerItems.length - 1 && <Divider orientation="vertical" sx={{ borderWidth: 2, borderColor: "#D9D9D980", height: 36 }} />}
             </React.Fragment>
           ))}
         </Stack>
 
         <Typography variant="body1" color="white" textAlign="center" sx={{ mt: 5 }}>
-          Copyright@2023, SCIMICS
+          {footer.copyright}
         </Typography>
       </Box>
     </div>

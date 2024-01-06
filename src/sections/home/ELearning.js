@@ -7,6 +7,8 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
+import en from "../common/en.json";
+
 const useStyles = makeStyles((theme) => ({
   elearningBlock1: {
     "&:before": {
@@ -52,36 +54,10 @@ const ELearning = () => {
   const owlCarouselRef = useRef(null);
   const [currentItem, setCurrentItem] = useState(0);
 
-  const items = [
-    {
-      name: "Projects",
-      desc: "Every Project is an Opportunity to Build and Learn.",
-      icon: `${PUBLIC_URL}/static/icons/sm-projects.svg`,
-      activeIcon: `${PUBLIC_URL}/static/icons/sm-projects-cr.svg`,
-      image: `${PUBLIC_URL}/static/images/projects-main.svg`,
-    },
-    {
-      name: "Roadmaps",
-      desc: "AI tailored course plans for your focused learning experience",
-      icon: `${PUBLIC_URL}/static/icons/sm-roadmap.svg`,
-      activeIcon: `${PUBLIC_URL}/static/icons/sm-roadmap-cr.svg`,
-      image: `${PUBLIC_URL}/static/images/roadmap-main.svg`,
-    },
-    {
-      name: "Coding Env",
-      desc: "Learn coding seamlessly in our Cloud-Based Environment.",
-      icon: `${PUBLIC_URL}/static/icons/sm-coding.svg`,
-      activeIcon: `${PUBLIC_URL}/static/icons/sm-coding-cr.svg`,
-      image: `${PUBLIC_URL}/static/images/coding-main.svg`,
-    },
-    {
-      name: "AI Assistant",
-      desc: "Powerful AI that helps you overcome any coding challenge.",
-      icon: `${PUBLIC_URL}/static/icons/sm-ai.svg`,
-      activeIcon: `${PUBLIC_URL}/static/icons/sm-ai-cr.svg`,
-      image: `${PUBLIC_URL}/static/images/ai-main.svg`,
-    },
-  ];
+  const { elearningSection } = en;
+
+  const eitems = Object.values(elearningSection.eitems);
+
 
   const options = {
     items: 1,
@@ -123,10 +99,10 @@ const ELearning = () => {
 
           <Box>
             <Typography variant="h2" fontWeight={700}>
-              E-Learning
+              {elearningSection.title}
             </Typography>
             <Typography variant="body2" color="text.subtitle">
-              The Most Complete E-learning Platform Available
+              {elearningSection.subtitle}
             </Typography>
           </Box>
         </Stack>
@@ -136,12 +112,12 @@ const ELearning = () => {
         <Box pl={10}>
           <Box pt={3} px={5} sx={{ bgcolor: "background.default", border: "1px solid #55555550", borderRadius: 4, position: "relative", zIndex: 2 }}>
             <Grid container spacing={2}>
-              {items.map((item, index) => (
+              {eitems.map((item, index) => (
                 <Grid key={index} item xs={12} sm={6} md={3}>
                   <Card sx={{ boxShadow: 0, height: "100%" }}>
                     <CardActionArea className={classes.cardInner} onClick={() => handleClick(index)}>
                       <Stack direction="row" spacing={1} sx={{ mb: 2, alignItems: "center" }}>
-                        <Box component="img" src={currentItem == index ? item.activeIcon : item.icon} sx={{ width: 16, height: 16 }} />
+                        <Box component="img" src={`${PUBLIC_URL}${currentItem === index ? item.activeIcon : item.icon}`} sx={{ width: 16, height: 16 }} />
 
                         <Typography variant="h6" fontWeight="500" color={currentItem == index ? "#CED765" : "text.primary"}>
                           {item.name}
@@ -163,8 +139,8 @@ const ELearning = () => {
 
             <Box sx={{ transform: "translateY(20px)" }}>
               <OwlCarousel className="owl-theme" startPosition={currentItem} ref={owlCarouselRef} {...options} onTranslated={handleChange}>
-                {items.map((item, index) => (
-                  <Box key={index} component="img" src={item.image} sx={{ width: "100%" }} />
+                {eitems.map((item, index) => (
+                  <Box key={index} component="img" src={`${PUBLIC_URL}${item.image}`} sx={{ width: "100%" }} />
                 ))}
               </OwlCarousel>
             </Box>

@@ -3,45 +3,54 @@
         "launchMessage": "Launching our Private Beta",
         "successJourneyTitle": "Your Success Journey",
         "successJourneySubtitle": "Begins with",
-        "successJourneyTerms": [
-            {
-                "term": "E-Learning"
-            },
-            {
-                "term": "Certification"
-            }
-        ],
+        "successJourneyTerms": {
+            "term1": "E-Learning",
+            "term2": "Certification"
+        },
         "additionalInfo": "Learning, Certifications, AI Resume Builder, Mock Interviews",
         "requestAccessButton": "Request Early Access"
     },
     "elearningSection": {
         "title": "E-Learning",
         "subtitle": "The Most Complete E-learning Platform Available",
-        "items": [
-            {
+        "eitems": {
+            "Projects": {
                 "name": "Projects",
-                "desc": "Every Project is an Opportunity to Build and Learn."
+                "desc": "Every Project is an Opportunity to Build and Learn.",
+                "icon": "/static/icons/sm-projects.svg",
+                "activeIcon": "/static/icons/sm-projects-cr.svg",
+                "image": "/static/images/projects-main.svg"
             },
-            {
+            "Roadmaps": {
                 "name": "Roadmaps",
-                "desc": "AI tailored course plans for your focused learning experience"
+                "desc": "AI tailored course plans for your focused learning experience",
+                "icon": "/static/icons/sm-roadmap.svg",
+                "activeIcon": "/static/icons/sm-roadmap-cr.svg",
+                "image": "/static/images/roadmap-main.svg"
             },
-            {
+            "Coding Env": {
                 "name": "Coding Env",
-                "desc": "Learn coding seamlessly in our Cloud-Based Environment."
+                "desc": "Learn coding seamlessly in our Cloud-Based Environment.",
+                "icon": "/static/icons/sm-coding.svg",
+                "activeIcon": "/static/icons/sm-coding-cr.svg",
+                "image": "/static/images/coding-main.svg"
             },
-            {
+            "AI Assistant": {
                 "name": "AI Assistant",
-                "desc": "Powerful AI that helps you overcome any coding challenge."
+                "desc": "Powerful AI that helps you overcome any coding challenge.",
+                "icon": "/static/icons/sm-ai.svg",
+                "activeIcon": "/static/icons/sm-ai-cr.svg",
+                "image": "/static/images/ai-main.svg"
             }
-        ]
+        }
     },
     "parametersSection": {
-        "ceoDescription": "Invest in Your Talent. Gain the Skills Your Org Needs to Meet Business Goals and Innovate. Future-proof Your Corporate Workforce with Skill Development. Demo Udemy Business.",
         "ceoTitle": "CEO, RUSA",
+        "ceoDescription": "Invest in Your Talent. Gain the Skills Your Org Needs to Meet Business Goals and Innovate. Future-proof Your Corporate Workforce with Skill Development. Demo Udemy Business.",
         "icapTest": {
             "title": "I-CAP Test",
-            "description": "An ICAP test offers comprehensive insights with precision, leaving no stone unturned in evaluating complex variables."
+            "description": "An ICAP test offers comprehensive insights with precision, leaving no stone unturned in evaluating complex variables.",
+            "subtitle": "The Most Complete"
         },
         "parameterItems": [
             {
@@ -112,7 +121,7 @@
             },
             {
                 "name": "Personality and Behaviour",
-                "desc": "The 'Personality and Behavior' section assesses vital soft skills necessary for professional growth, including teamwork, adaptability, efficient project and time management, and professional etiquette. It's crucial for thriving in dynamic work environments.",
+                "desc": "The 'Personality and Behavior' section assesses vital soft skills necessary for professional growth, including teamwork, adaptability, efficient project and time management, and professional etiquette, crucial for thriving in dynamic work environments.",
                 "icon": "/static/icons/sm-para.svg",
                 "children": [
                     {
@@ -142,29 +151,29 @@
     "certificationsSection": {
         "title": "Comprehensive Certifications Under One Roof",
         "subtitle": "Achieve Recognition: Dive into a curated selection from our extensive catalog of industry-leading certifications.",
-        "carouselItems": [
-            {
+        "carouselItems": {
+            "item1": {
                 "image": "/static/icons/js.svg"
             },
-            {
+            "item2": {
                 "image": "/static/icons/html.svg"
             },
-            {
+            "item3": {
                 "image": "/static/icons/css.svg"
             },
-            {
+            "item4": {
                 "image": "/static/icons/python.svg"
             },
-            {
+            "item5": {
                 "image": "/static/icons/c++.svg"
             },
-            {
+            "item6": {
                 "image": "/static/icons/go.svg"
             },
-            {
+            "item7": {
                 "image": "/static/icons/java.svg"
             }
-        ],
+        },
         "ceoDescription": "Invest in Your Talent. Gain the Skills Your Org Needs to Meet Business Goals and Innovate. Future-proof Your Corporate Workforce with Skill Development. Demo Udemy Business.",
         "ceoTitle": "CEO, RUSA"
     },
@@ -184,34 +193,32 @@
         "requestEarlyAccessButton": "Request Early Access"
     },
     "footer": {
-        "logoAltText": "SCIMICS",
-        "logoImagePath": "/static/icons/logo.svg",
         "solutions": "Solutions",
         "explore": "Explore",
         "company": "Company",
         "socialMedia": [
             {
-                "image": "/static/icons/youtube.svg",
+                "name": "YouTube",
                 "alt": "YouTube"
             },
             {
-                "image": "/static/icons/linkedin.svg",
+                "name": "LinkedIn",
                 "alt": "LinkedIn"
             },
             {
-                "image": "/static/icons/facebook.svg",
+                "name": "Facebook",
                 "alt": "Facebook"
             },
             {
-                "image": "/static/icons/twitter.svg",
+                "name": "Twitter",
                 "alt": "Twitter"
             },
             {
-                "image": "/static/icons/instagram.svg",
+                "name": "Instagram",
                 "alt": "Instagram"
             },
             {
-                "image": "/static/icons/quora.svg",
+                "name": "Quora",
                 "alt": "Quora"
             }
         ],
@@ -220,7 +227,7 @@
                 "name": "Career Paths"
             },
             {
-                "name": "7 Parameters test"
+                "name": "I-CAP test"
             },
             {
                 "name": "Mocx"

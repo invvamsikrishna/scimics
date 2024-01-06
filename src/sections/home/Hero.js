@@ -7,11 +7,11 @@ import Typewriter from "typewriter-effect";
 import RequestAccessDialog from "../common/RequestAccessDialog";
 import en from "../common/en.json";
 
+const { launchMessage, successJourneyTitle, successJourneySubtitle, additionalInfo, requestAccessButton } = en.heroSection;
+
 
 
 const Hero = () => {
-  const { launchMessage, successJourneyTitle, successJourneySubtitle, additionalInfo, requestAccessButton } = en.heroSection;
-  console.log(launchMessage);
   return (
     <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, my: 5 }}>
       <Grid container sx={{ backgroundImage: `url(${PUBLIC_URL}/static/images/hero_bg.svg)`, backgroundRepeat: "no-repeat", backgroundPosition: "right", backgroundSize: "contain", height: "520px" }}>
@@ -35,7 +35,7 @@ const Hero = () => {
               <Typewriter
                 component="span"
                 onInit={(typewriter) => {
-                  typewriter.typeString(`<span style="color: #CED765">${en.heroSection.successJourneyTerms[0].term}</span>`).pauseFor(2500).deleteAll().typeString(`<span style="color: #CED765">${en.heroSection.successJourneyTerms[1].term}</span>`).pauseFor(2500).deleteAll().start();
+                  typewriter.typeString(`<span style="color: #CED765">${en.heroSection.successJourneyTerms.term1}</span>`).pauseFor(2500).deleteAll().typeString(`<span style="color: #CED765">${en.heroSection.successJourneyTerms.term2}</span>`).pauseFor(2500).deleteAll().start();
                 }}
                 options={{
                   autoStart: true,

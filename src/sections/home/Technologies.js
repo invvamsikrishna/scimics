@@ -3,6 +3,7 @@ import { makeStyles } from "@mui/styles";
 import { Container, Typography, Box, Stack, Grid, Divider } from "@mui/material";
 import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 import CustomButton from "../../components/CustomButton";
+import en from "../common/en.json";
 
 const useStyles = makeStyles((theme) => ({
   technologyBlock1: {
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Technologies = () => {
   const classes = useStyles();
+  const { aiResumeBuilder, mockInterview, builtForYourFuture, requestEarlyAccessButton } = en.technologiesSection;
 
   return (
     <>
@@ -73,11 +75,11 @@ const Technologies = () => {
 
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h2" fontWeight={700} gutterBottom>
-            AI resume builder
+            {aiResumeBuilder.title}
           </Typography>
 
           <Typography variant="body2" color="text.subtitle">
-            The Most Efficient AI Resume Creator Online
+            {aiResumeBuilder.subtitle}
           </Typography>
         </Box>
 
@@ -105,17 +107,17 @@ const Technologies = () => {
 
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h2" fontWeight={700} gutterBottom>
-            Mock Interview
+            {mockInterview.title}
           </Typography>
 
           <Typography variant="body2" color="text.subtitle">
-            The meaning of a mock interview is self-explanatory
+            {mockInterview.subtitle}
           </Typography>
         </Box>
 
         <Box p={3} />
 
-        <Box component="img" src={`${PUBLIC_URL}/static/images/mock.png`} sx={{ width: "100%" }} />
+        <Box component="img" src={`${PUBLIC_URL}/static/images/mock.svg`} sx={{ width: "100%" }} />
       </Container>
 
       <Container maxWidth="sm" disableGutters sx={{ mt: 20, mb: 16 }}>
@@ -129,16 +131,16 @@ const Technologies = () => {
 
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h2" fontWeight={500} gutterBottom>
-            Built for your future.
+            {builtForYourFuture.title}
           </Typography>
 
           <Typography variant="body2" color="text.subtitle">
-            Experience the most enjoyable, powerful way for you to learn and transform your career.
+            {builtForYourFuture.subtitle}
           </Typography>
 
           <Box p={5} />
 
-          <CustomButton title="Request Early Access" />
+          <CustomButton title={requestEarlyAccessButton} />
         </Box>
       </Container>
     </>
