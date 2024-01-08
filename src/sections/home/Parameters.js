@@ -54,6 +54,35 @@ const useStyles = makeStyles((theme) => ({
       borderTopLeftRadius: "12px",
     },
   },
+  animateBox: {
+    position: "absolute",
+    width: "62%",
+    height: "100%",
+    top: 0,
+    left: "19%",
+    zIndex: 2,
+    overflow: "hidden",
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      width: "20%",
+      height: "100%",
+      top: 0,
+      left: 0,
+      backgroundImage: "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%)",
+      maskImage: "linear-gradient(#0000 0%, #0000 10%, #fff 30%, #fff 70%, #0000 90%, #0000 100%)",
+      animation: "$animate 9s cubic-bezier(.6,.6,0,1) infinite",
+    },
+    // border: "2px solid red",
+  },
+  "@keyframes animate": {
+    "0%, 100%": {
+      transform: "translateX(-45px)",
+    },
+    "50%": {
+      transform: "translateX(245px)",
+    },
+  },
 }));
 
 const Parameters = () => {
@@ -104,8 +133,9 @@ const Parameters = () => {
                     </Typography>
                   </Box>
 
-                  <Box px={10} sx={{ bgcolor: "background.default" }}>
-                    <Typography variant="h4" fontWeight="500" color="text.subtitle">
+                  <Box px={10} sx={{ position: "relative", bgcolor: "background.default" }}>
+                    <Box component="div" className={classes.animateBox}></Box>
+                    <Typography variant="h4" fontWeight="500" color="#c4cdd545" >
                       {icapTest.subtitle}
                     </Typography>
                   </Box>
