@@ -13,7 +13,7 @@ const { launchMessage, successJourneyTitle, successJourneySubtitle, additionalIn
 
 const Hero = () => {
   return (
-    <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, my: 5 }}>
+    <Container id="hero-section" maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, my: 5 }}>
       <Grid container sx={{ backgroundImage: `url(${PUBLIC_URL}/static/images/hero_bg.svg)`, backgroundRepeat: "no-repeat", backgroundPosition: "right", backgroundSize: "contain", height: "520px" }}>
         <Grid item xs={12} md={8}>
           <Box sx={{ pt: 6 }}>

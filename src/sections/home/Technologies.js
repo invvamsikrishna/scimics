@@ -53,6 +53,15 @@ const Technologies = () => {
   const classes = useStyles();
   const { aiResumeBuilder, mockInterview, builtForYourFuture, requestEarlyAccessButton } = en.technologiesSection;
 
+  const scrollToRequestButton = () => {
+    // console.log("Scrolling to request button");
+    const heroSection = document.getElementById("hero-section");
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
   return (
     <>
       <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, mt: 12, mb: 12 }}>
@@ -140,7 +149,7 @@ const Technologies = () => {
 
           <Box p={5} />
 
-          <CustomButton title={requestEarlyAccessButton} />
+          <CustomButton title={requestEarlyAccessButton} onPressed={scrollToRequestButton} />
         </Box>
       </Container>
     </>
