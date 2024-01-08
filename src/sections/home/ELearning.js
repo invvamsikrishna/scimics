@@ -63,6 +63,7 @@ const ELearning = () => {
     items: 1,
     autoplay: true,
     autoplayTimeout: 3000,
+    // autoplaySpeed: 1000,
     loop: true,
     margin: 0,
     dots: false,
@@ -74,6 +75,18 @@ const ELearning = () => {
       setCurrentItem(index);
     }
   };
+
+  // Function to preload images
+  const preloadImages = () => {
+    eitems.forEach((item) => {
+      const img = new Image();
+      img.src = `${PUBLIC_URL}${item.image}`;
+    });
+  };
+
+  // Call the function to preload images
+  preloadImages();
+
 
   const handleClick = (index) => {
     owlCarouselRef.current.to(index, 100);
@@ -119,7 +132,7 @@ const ELearning = () => {
                       <Stack direction="row" spacing={1} sx={{ mb: 2, alignItems: "center" }}>
                         <Box component="img" src={`${PUBLIC_URL}${currentItem === index ? item.activeIcon : item.icon}`} sx={{ width: 16, height: 16 }} />
 
-                        <Typography variant="h6" fontWeight="500" color={currentItem == index ? "#CED765" : "text.primary"}>
+                        <Typography variant="h6" fontWeight="500" color={currentItem === index ? "#CED765" : "text.primary"}>
                           {item.name}
                         </Typography>
                       </Stack>
