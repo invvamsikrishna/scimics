@@ -6,6 +6,7 @@ import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 import Typewriter from "typewriter-effect";
 import RequestAccessDialog from "../common/RequestAccessDialog";
 import en from "../common/en.json";
+import RAD from "../common/RAD";
 
 const { launchMessage, successJourneyTitle, successJourneySubtitle, additionalInfo, requestAccessButton } = en.heroSection;
 
@@ -13,7 +14,7 @@ const { launchMessage, successJourneyTitle, successJourneySubtitle, additionalIn
 
 const Hero = () => {
   return (
-    <Container id="hero-section" maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, my: 5 }}>
+    <Container maxWidth={false} disableGutters sx={{ maxWidth: MAXWIDTH, my: 5 }}>
       <Grid container sx={{ backgroundImage: `url(${PUBLIC_URL}/static/images/hero_bg.svg)`, backgroundRepeat: "no-repeat", backgroundPosition: "right", backgroundSize: "contain", height: "520px" }}>
         <Grid item xs={12} md={8}>
           <Box sx={{ pt: 6 }}>
@@ -50,7 +51,11 @@ const Hero = () => {
               and Much More..
             </Typography>
 
-            <RequestAccessDialog title={requestAccessButton} />
+            {/* <RequestAccessDialog title={requestAccessButton} /> */}
+            <Box >
+              <RAD title={requestAccessButton} />
+            </Box>
+
           </Box>
         </Grid>
       </Grid>

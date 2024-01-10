@@ -53,13 +53,24 @@ const Technologies = () => {
   const classes = useStyles();
   const { aiResumeBuilder, mockInterview, builtForYourFuture, requestEarlyAccessButton } = en.technologiesSection;
 
+
+
+
   const scrollToRequestButton = () => {
-    // console.log("Scrolling to request button");
-    const heroSection = document.getElementById("hero-section");
-    if (heroSection) {
-      heroSection.scrollIntoView({ behavior: "smooth" });
+    // Get the email input field element using its name
+    const emailInput = document.getElementsByName("email")[0];
+
+    // Scroll to the email input field
+    if (emailInput) {
+      emailInput.scrollIntoView({ behavior: "smooth" });
+
+      // Set a timeout to focus on the email input field after scrolling
+      setTimeout(() => {
+        emailInput.focus();
+      }, 500); // Adjust the timeout duration as needed
     }
   };
+
 
 
   return (

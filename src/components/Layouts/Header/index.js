@@ -26,11 +26,20 @@ const Header = () => {
     setOpenSidebar(!openSidebar);
   };
 
+  const scrollToRequestButton = () => {
+    // Scroll logic here
+    const radInput = document.getElementById("email-input");
+    if (radInput) {
+      radInput.scrollIntoView({ behavior: "smooth", block: "end" });
+      radInput.focus();
+    }
+  };
+
   const open = isMd ? false : openSidebar;
 
   return (
     <div>
-      <Topbar items={items} handleSidebar={handleSidebar} />
+      <Topbar items={items} handleSidebar={handleSidebar} scrollToRequestButton={scrollToRequestButton} />
 
       <Sidebar open={open} items={items} handleSidebar={handleSidebar} />
     </div>

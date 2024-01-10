@@ -51,7 +51,7 @@ const RequestAccessDialog = ({ title }) => {
 
   const { handleSubmit, reset } = methods;
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => { };
 
   const handleCancel = () => {
     setDialogOpen(false);

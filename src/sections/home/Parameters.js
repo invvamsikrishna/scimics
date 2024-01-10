@@ -54,33 +54,26 @@ const useStyles = makeStyles((theme) => ({
       borderTopLeftRadius: "12px",
     },
   },
-  animateBox: {
-    position: "absolute",
-    width: "62%",
-    height: "100%",
-    top: 0,
-    left: "19%",
-    zIndex: 2,
+  animateText: {
+    fontFamily: "sans-serif",
+    fontWeight: "500",
+    // textTransform: "uppercase",
+    // fontSize: "2em",
+    // letterSpacing: "4px",
     overflow: "hidden",
-    "&::before": {
-      content: "''",
-      position: "absolute",
-      width: "20%",
-      height: "100%",
-      top: 0,
-      left: 0,
-      backgroundImage: "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%)",
-      maskImage: "linear-gradient(#0000 0%, #0000 10%, #fff 30%, #fff 70%, #0000 90%, #0000 100%)",
-      animation: "$animate 9s cubic-bezier(.6,.6,0,1) infinite",
-    },
-    // border: "2px solid red",
+    backgroundImage: "linear-gradient(90deg, rgba(255, 255, 255, 0), #c4cdd5, rgba(255, 255, 255, 0))",
+    backgroundSize: "200% 100%",  // Double the size for smoother animation
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent", // Set text color to transparent
+    animation: "$animate 9s linear infinite",
   },
+
   "@keyframes animate": {
-    "0%, 100%": {
-      transform: "translateX(-45px)",
+    "0%": {
+      backgroundPosition: "200%",
     },
-    "50%": {
-      transform: "translateX(245px)",
+    "100%": {
+      backgroundPosition: "-200%",
     },
   },
 }));
@@ -134,8 +127,8 @@ const Parameters = () => {
                   </Box>
 
                   <Box px={10} sx={{ position: "relative", bgcolor: "background.default" }}>
-                    <Box component="div" className={classes.animateBox}></Box>
-                    <Typography variant="h4" fontWeight="500" color="#c4cdd545" >
+                    {/* <Box component="div" className={classes.animateBox}></Box> */}
+                    <Typography variant="h4" fontWeight="500" color="#c4cdd545" className={classes.animateText}>
                       {icapTest.subtitle}
                     </Typography>
                   </Box>

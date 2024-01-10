@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Topbar = ({ items, handleSidebar, handleDialog }) => {
+const Topbar = ({ items, handleSidebar, handleDialog, scrollToRequestButton }) => {
   const classes = useStyles();
   const { pathname, hash } = useLocation();
 
@@ -65,7 +65,15 @@ const Topbar = ({ items, handleSidebar, handleDialog }) => {
                         component={!item.isDialog ? RouterLink : item.target ? "a" : "div"}
                         {...(item.target && { href: item.link, target: "_blank" })}
                         to={item.link}
-                        onClick={() => handleDialog(item)}
+                        onClick={() => {
+                          if (item.onClick) {
+                            item.onClick();
+                          }
+                          if (item.title === "Request Access") {
+                            scrollToRequestButton();
+                          }
+                          // handleDialog(item);
+                        }}
                         sx={{
                           color: match(item.link) ? "primary.main" : item.color != null ? item.color : "text.primary",
                           "&:hover": {
