@@ -86,17 +86,17 @@
                         "icon": "/static/icons/sm-para1.svg"
                     },
                     {
-                        "name": "Listening",
+                        "name": "English Listening",
                         "desc": "Hands-on coding or problem-solving tasks.",
                         "icon": "/static/icons/sm-para2.svg"
                     },
                     {
-                        "name": "Writing",
+                        "name": "English Writing",
                         "desc": "Demonstrates the ability to clearly and precisely convey ideas in written form.",
                         "icon": "/static/icons/sm-para3.svg"
                     },
                     {
-                        "name": "Reading",
+                        "name": "English Reading",
                         "desc": "Vital for understanding and analyzing written texts, crucial in academic and professional contexts.",
                         "icon": "/static/icons/sm-para3.svg"
                     }
@@ -113,7 +113,7 @@
                         "icon": "/static/icons/sm-para1.svg"
                     },
                     {
-                        "name": "Analytical Reasoning",
+                        "name": "Logical Reasoning",
                         "desc": "Evaluate the ability to analyze complex information, recognize patterns, and draw logical conclusions.",
                         "icon": "/static/icons/sm-para2.svg"
                     }
