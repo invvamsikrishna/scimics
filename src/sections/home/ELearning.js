@@ -6,6 +6,7 @@ import { MAXWIDTH, PUBLIC_URL } from "../../constants";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { customStyles } from "../common/customStyles";
 
 import en from "../common/en.json";
 
@@ -51,13 +52,13 @@ const useStyles = makeStyles((theme) => ({
 
 const ELearning = () => {
   const classes = useStyles();
+  const animStyles = customStyles();
   const owlCarouselRef = useRef(null);
   const [currentItem, setCurrentItem] = useState(0);
 
   const { elearningSection } = en;
 
   const eitems = Object.values(elearningSection.eitems);
-
 
   const options = {
     items: 1,
@@ -87,7 +88,6 @@ const ELearning = () => {
   // Call the function to preload images
   preloadImages();
 
-
   const handleClick = (index) => {
     owlCarouselRef.current.to(index, 100);
   };
@@ -97,7 +97,14 @@ const ELearning = () => {
       <Box sx={{ position: "relative" }}>
         <Box className={classes.elearningBlock1} />
 
-        <Box component="img" src={`${PUBLIC_URL}/static/images/elearning.svg`} sx={{ width: "100%" }} />
+        <Box className={animStyles.outerBorderBox}>
+          <Box className={animStyles.outerMask}>
+            <Box className={animStyles.heroPreview1}></Box>
+            <Box className={animStyles.heroPreview2}></Box>
+          </Box>
+
+          <Box component="img" src={`${PUBLIC_URL}/static/images/elearning.svg`} sx={{ width: "100%" }} />
+        </Box>
       </Box>
 
       <Box sx={{ height: 160 }} />
